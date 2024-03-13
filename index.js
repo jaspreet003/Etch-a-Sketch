@@ -33,12 +33,19 @@ function createDiv(row, column) {
 
 function styleSquare(square) {
 
-    square.style.backgroundColor = 'pink';
-
-    square.style.border = '1px solid black'
+    square.style.backgroundColor = getRandomColor();
 
     square.style.width = '50px';
-    
+
     square.style.height = '50px';
 
+}
+
+function getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
 }
