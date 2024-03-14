@@ -14,8 +14,6 @@ function createDiv() {
 
     const gridDimension = Number(document.getElementById('grid').value);
 
-    console.log(gridDimension);
-
     if (gridDimension > 0 && gridDimension <= 40) {
 
         for (let i = 0; i < gridDimension; i++) {
@@ -63,6 +61,11 @@ function errorStyle(content) {
 
 function styleSquare(square, gridDimension) {
 
+
+    const calculatedSquareWidth = calculateSquareDimension(gridDimension);
+
+    console.log(calculatedSquareWidth);
+
     let hslColor = {
         "degree": Math.random() * 360,
         "saturation": "100%",
@@ -77,17 +80,11 @@ function styleSquare(square, gridDimension) {
 
     square.style.border = "1px solid rgb(200,200,200)";
 
-    const defaultSize = 16
-    let decidedSize = defaultSize
 
-    if (gridDimension <= 4) decidedSize = defaultSize * 6;
-    if (gridDimension > 4 && gridDimension <= 8) decidedSize = defaultSize * 4;
-    if (gridDimension > 8 && gridDimension <= 16) decidedSize = defaultSize * 3;
-    if (gridDimension > 16 && gridDimension <= 30) decidedSize = defaultSize * 2;
 
-    square.style.width = decidedSize + 'px';
+    square.style.width = calculatedSquareWidth + 'px';
 
-    square.style.height = decidedSize + 'px';
+    square.style.height = calculatedSquareWidth + 'px';
 
     square.addEventListener("mouseover", () => {
 
@@ -107,5 +104,14 @@ function styleSquare(square, gridDimension) {
         }
     })
 
+}
+
+function calculateSquareDimension(gridDimension) {
+
+    const containerSize = 800;
+    const borderSize = 2;
+    const availableSpacePerSquare = containerSize / gridDimension - borderSize;
+
+    return Math.floor(availableSpacePerSquare);
 }
 
