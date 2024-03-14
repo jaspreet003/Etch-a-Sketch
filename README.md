@@ -1,10 +1,9 @@
-"# Etch-a-Sketch" 
+# Etch-a-Sketch 
 
-This project is a dynamic, interactive sketchpad implemented using HTML, CSS, and JavaScript. It allows users to create a customizable grid of squares that change color upon mouse hover, creating a pixel art-like effect. Below are the key features and functionalities of the sketchpad project.
-
+This project is a dynamic, interactive sketchpad implemented using HTML, CSS, and JavaScript. It allows users to create a customizable grid of squares that change color upon mouse hover, creating a pixel art-like effect.
 ## Features
 
-- **Dynamic Grid Creation**: Automatically generates a grid of square divs within a "container" div using JavaScript, allowing for easy adjustment of grid dimensions up to a maximum of 40x40 squares.
+- **Dynamic Grid Creation**: Generates a grid of squares based on user input allowing for easy adjustment of grid dimensions up to a maximum of 40x40 squares.
 
 - **Flexbox Layout**: Utilizes CSS Flexbox for arranging squares in a grid layout, ensuring a consistent and responsive design without the need for CSS Grid.
 
@@ -12,7 +11,7 @@ This project is a dynamic, interactive sketchpad implemented using HTML, CSS, an
 
 - **Color Randomization and Progressive Darkening**: Initially assigns a random HSL color to each square. Implements a progressive darkening effect that increases the color's intensity with each mouseover, culminating in a black square after ten interactions.
 
-- **Grid Resizing**: Features a user input prompt for changing the grid dimension, enabling the creation of a new grid within the same space without altering the sketchpad's overall size.
+- **Grid Resizing**: Features a user input field for changing the grid dimension, enabling the creation of a new grid within the same space without altering the sketchpad's overall size.
 
 - **Error Handling**: Validates user input for grid dimensions, ensuring values are within a specified range (1-40) and providing user feedback for invalid entries.
 
