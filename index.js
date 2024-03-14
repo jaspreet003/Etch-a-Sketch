@@ -12,7 +12,7 @@ function createDiv() {
 
     const noOfColumn = document.getElementById('column').value;
 
-    for (let i = 1; i <= noOfRow; i++) {
+    for (let i = 0; i < noOfRow; i++) {
 
         let square;
 
@@ -20,7 +20,7 @@ function createDiv() {
 
         row.style.display = "flex";
 
-        for (let j = 1; j <= noOfColumn; j++) {
+        for (let j = 0; j < noOfColumn; j++) {
 
             square = document.createElement("div");
 
@@ -29,16 +29,19 @@ function createDiv() {
             row.appendChild(square);
 
         }
-        
+
         divContainer.append(row);
 
     }
 
 }
 
+
 function styleSquare(square) {
 
-    square.style.backgroundColor = getRandomColor();
+    square.style.backgroundColor = 'lightGrey';
+
+    square.style.border = "1px solid gray";
 
     square.style.width = '50px';
 
