@@ -15,7 +15,7 @@ header {
 #HeadTitle {
     font-weight: 900;
     margin: 20px 0;
-    font-size: 80px;
+    font-size: 90px;
     color: white;
     text-shadow: 2px 2px 4px yellow;
 }
@@ -68,3 +68,10 @@ button:hover {
     color: rgb(80, 78, 12)
 }
 
+#container {
+    margin: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
