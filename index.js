@@ -1,8 +1,17 @@
+let square;
+
 const create = document.getElementById('create');
 
 const divContainer = document.getElementById("container");
 
 create.addEventListener('click', createDiv);
+
+let hslColor = {
+    "degree": 0,
+    "saturation": "100%",
+    "lightness": "90%"
+}
+
 
 function createDiv() {
 
@@ -13,8 +22,6 @@ function createDiv() {
     const noOfColumn = document.getElementById('column').value;
 
     for (let i = 0; i < noOfRow; i++) {
-
-        let square;
 
         var row = document.createElement("div");
 
@@ -39,7 +46,9 @@ function createDiv() {
 
 function styleSquare(square) {
 
-    square.style.backgroundColor = 'lightGrey';
+    hslColor.degree = Math.random() * 360;
+
+    square.style.backgroundColor = "hsl(" + hslColor.degree + "," + hslColor.saturation + ',' + hslColor.lightness + ")";
 
     square.style.border = "1px solid gray";
 
@@ -47,13 +56,4 @@ function styleSquare(square) {
 
     square.style.height = '50px';
 
-}
-
-function getRandomColor() {
-    var letters = '0123456789ABCDEF';
-    var color = '#';
-    for (var i = 0; i < 6; i++) {
-        color += letters[Math.floor(Math.random() * 16)];
-    }
-    return color;
 }
