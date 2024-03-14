@@ -1,11 +1,18 @@
-document.body.onload = createDiv;
+const create = document.getElementById('create');
 
+const divContainer = document.getElementById("container");
 
+create.addEventListener('click', createDiv);
 
-function createDiv(row, column) {
-    console.log("jajajs");
+function createDiv() {
 
-    for (let i = 0; i <= 16; i++) {
+    divContainer.innerHTML = '';
+
+    const noOfRow = document.getElementById('row').value;
+
+    const noOfColumn = document.getElementById('column').value;
+
+    for (let i = 1; i <= noOfRow; i++) {
 
         let square;
 
@@ -13,7 +20,7 @@ function createDiv(row, column) {
 
         row.style.display = "flex";
 
-        for (let j = 0; j <= 16; j++) {
+        for (let j = 1; j <= noOfColumn; j++) {
 
             square = document.createElement("div");
 
@@ -22,9 +29,7 @@ function createDiv(row, column) {
             row.appendChild(square);
 
         }
-
-        const divContainer = document.getElementById("container");
-
+        
         divContainer.append(row);
 
     }
