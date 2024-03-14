@@ -6,13 +6,6 @@ const divContainer = document.getElementById("container");
 
 create.addEventListener('click', createDiv);
 
-let hslColor = {
-    "degree": 0,
-    "saturation": "100%",
-    "lightness": "100"
-}
-
-
 function createDiv() {
 
     divContainer.innerHTML = '';
@@ -46,7 +39,11 @@ function createDiv() {
 
 function styleSquare(square) {
 
-    hslColor.degree = Math.random() * 360;
+    let hslColor = {
+        "degree": Math.random() * 360,
+        "saturation": "100%",
+        "lightness": 100
+    }
 
     const hslDegree = hslColor.degree;
 
@@ -56,7 +53,7 @@ function styleSquare(square) {
 
     console.log(square.style.backgroundColor = hslFinalColor);
 
-    square.style.border = "1px solid gray";
+    square.style.border = "1px solid rgb(248,248,248)";
 
     square.style.width = '50px';
 
@@ -68,11 +65,16 @@ function styleSquare(square) {
 
         hslColor.lightness = hslSqaureLightness;
 
-        square.style.backgroundColor = "hsl(" + hslDegree + "," + hslColor.saturation + ',' + hslSqaureLightness + "%" + ")";
+        var newColor = "hsl(" + hslDegree + "," + hslColor.saturation + ',' + hslSqaureLightness + "%" + ")"
 
-        console.log(square.style.backgroundColor = "hsl(" + hslDegree + "," + hslColor.saturation + ',' + hslSqaureLightness + "%" + ")");
+        if (hslSqaureLightness > 0) {
+            square.style.backgroundColor = newColor;
 
-
+            square.style.border = `1px solid ${newColor}`;
+        } else {
+            square.style.backgroundColor = "black";
+            square.style.border = `1px solid rgb(56,56,56)`;
+        }
     })
 
 }
