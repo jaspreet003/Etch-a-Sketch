@@ -10,30 +10,52 @@ function createDiv() {
 
     divContainer.innerHTML = '';
 
-    const gridDimension = document.getElementById('grid').value;
+    const gridDimension = Number(document.getElementById('grid').value);
 
-    for (let i = 0; i < gridDimension; i++) {
+    if (gridDimension > 0 && gridDimension <= 40) {
 
-        var row = document.createElement("div");
+        for (let i = 0; i < gridDimension; i++) {
 
-        row.style.display = "flex";
+            var row = document.createElement("div");
 
-        for (let j = 0; j < gridDimension; j++) {
+            row.style.display = "flex";
 
-            square = document.createElement("div");
+            for (let j = 0; j < gridDimension; j++) {
 
-            styleSquare(square);
+                square = document.createElement("div");
 
-            row.appendChild(square);
+                styleSquare(square);
+
+                row.appendChild(square);
+
+            }
+
+            divContainer.append(row);
 
         }
+    } else {
 
-        divContainer.append(row);
+        const errDiv = document.createElement('div');
+
+        errDiv.innerHTML = "Grid Dimension should be a Number between 1 - 40. ";
+
+        errorStyle(errDiv);
+        divContainer.append(errDiv);
 
     }
 
 }
 
+
+function errorStyle(content) {
+
+    var con = content.style;
+    con.fontSize = "25px";
+    con.fontWeight = "400";
+    con.color = "brown";
+    con.textShadow = "1px 1px 2px grey";
+
+}
 
 function styleSquare(square) {
 
@@ -49,9 +71,7 @@ function styleSquare(square) {
 
     square.style.backgroundColor = hslFinalColor;
 
-    console.log(square.style.backgroundColor = hslFinalColor);
-
-    square.style.border = "1px solid rgb(248,248,248)";
+    square.style.border = "1px solid rgb(200,200,200)";
 
     square.style.width = '50px';
 
