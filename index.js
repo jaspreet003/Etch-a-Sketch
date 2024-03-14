@@ -9,7 +9,7 @@ create.addEventListener('click', createDiv);
 let hslColor = {
     "degree": 0,
     "saturation": "100%",
-    "lightness": "90%"
+    "lightness": "100"
 }
 
 
@@ -48,7 +48,13 @@ function styleSquare(square) {
 
     hslColor.degree = Math.random() * 360;
 
-    square.style.backgroundColor = "hsl(" + hslColor.degree + "," + hslColor.saturation + ',' + hslColor.lightness + ")";
+    const hslDegree = hslColor.degree;
+
+    const hslFinalColor = "hsl(" + hslDegree + "," + hslColor.saturation + ',' + hslColor.lightness + "%" + ")"
+
+    square.style.backgroundColor = hslFinalColor;
+
+    console.log(square.style.backgroundColor = hslFinalColor);
 
     square.style.border = "1px solid gray";
 
@@ -56,4 +62,18 @@ function styleSquare(square) {
 
     square.style.height = '50px';
 
+    square.addEventListener("mouseover", () => {
+
+        let hslSqaureLightness = hslColor.lightness - 10;
+
+        hslColor.lightness = hslSqaureLightness;
+
+        square.style.backgroundColor = "hsl(" + hslDegree + "," + hslColor.saturation + ',' + hslSqaureLightness + "%" + ")";
+
+        console.log(square.style.backgroundColor = "hsl(" + hslDegree + "," + hslColor.saturation + ',' + hslSqaureLightness + "%" + ")");
+
+
+    })
+
 }
+
