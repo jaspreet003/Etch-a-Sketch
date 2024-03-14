@@ -1,0 +1,70 @@
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 250px;
+    background-color: rgb(24, 24, 24);
+}
+
+.innerDiv {
+    margin: 0px auto;
+}
+
+#HeadTitle {
+    font-weight: 900;
+    margin: 20px 0;
+    font-size: 80px;
+    color: white;
+    text-shadow: 2px 2px 4px yellow;
+}
+
+.dimensions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.gridStyle {
+    display: flex;
+    align-items: center;
+    background-color: rgb(240, 240, 240);
+    color: black;
+    border-radius: 15px;
+    width: 65%;
+}
+
+.gridStyle p {
+    border: none;
+    font-size: 20px;
+    color: black;
+    padding: 0 20px;
+}
+
+input {
+    padding-left: 0px;
+    outline: none;
+    border: 1px solid rgb(240, 240, 240);
+    border-radius: 0 15px 15px 0;
+    font-size: 20px;
+    color: black;
+    width: 35%;
+    background-color: rgb(240, 240, 240);
+}
+
+button {
+    width: 30%;
+    height: 60px;
+    border-radius: 15px;
+    background-color: yellowgreen;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+button:hover {
+    background-color: gold;
+    box-shadow: 2px 2px 4px rgb(80, 78, 12), 2px 2px 4px rgb(247, 227, 115), 2px 2px 4px rgb(251, 250, 248);
+    color: rgb(80, 78, 12)
+}
+

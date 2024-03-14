@@ -10,17 +10,15 @@ function createDiv() {
 
     divContainer.innerHTML = '';
 
-    const noOfRow = document.getElementById('row').value;
+    const gridDimension = document.getElementById('grid').value;
 
-    const noOfColumn = document.getElementById('column').value;
-
-    for (let i = 0; i < noOfRow; i++) {
+    for (let i = 0; i < gridDimension; i++) {
 
         var row = document.createElement("div");
 
         row.style.display = "flex";
 
-        for (let j = 0; j < noOfColumn; j++) {
+        for (let j = 0; j < gridDimension; j++) {
 
             square = document.createElement("div");
 
