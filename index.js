@@ -1,3 +1,5 @@
+window.onload = createDiv;
+
 let square;
 
 const create = document.getElementById('create');
@@ -12,6 +14,8 @@ function createDiv() {
 
     const gridDimension = Number(document.getElementById('grid').value);
 
+    console.log(gridDimension);
+
     if (gridDimension > 0 && gridDimension <= 40) {
 
         for (let i = 0; i < gridDimension; i++) {
@@ -24,7 +28,7 @@ function createDiv() {
 
                 square = document.createElement("div");
 
-                styleSquare(square);
+                styleSquare(square, gridDimension);
 
                 row.appendChild(square);
 
@@ -57,7 +61,7 @@ function errorStyle(content) {
 
 }
 
-function styleSquare(square) {
+function styleSquare(square, gridDimension) {
 
     let hslColor = {
         "degree": Math.random() * 360,
@@ -73,9 +77,17 @@ function styleSquare(square) {
 
     square.style.border = "1px solid rgb(200,200,200)";
 
-    square.style.width = '50px';
+    const defaultSize = 16
+    let decidedSize = defaultSize
 
-    square.style.height = '50px';
+    if (gridDimension <= 4) decidedSize = defaultSize * 6;
+    if (gridDimension > 4 && gridDimension <= 8) decidedSize = defaultSize * 4;
+    if (gridDimension > 8 && gridDimension <= 16) decidedSize = defaultSize * 3;
+    if (gridDimension > 16 && gridDimension <= 30) decidedSize = defaultSize * 2;
+
+    square.style.width = decidedSize + 'px';
+
+    square.style.height = decidedSize + 'px';
 
     square.addEventListener("mouseover", () => {
 
